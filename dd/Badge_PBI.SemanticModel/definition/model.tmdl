@@ -1,0 +1,21 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Badges","Badge Sort Order"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.135.7627.0 (24.08)
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
+
+ref table Badges
+ref table DateTableTemplate_d7bb807d-a17b-4159-aa1a-51fabd1dc1bd
+
+ref cultureInfo en-IN
+

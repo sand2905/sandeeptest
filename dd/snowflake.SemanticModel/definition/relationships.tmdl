@@ -1,0 +1,5 @@
+relationship 57ec6510-5e54-42e5-ab51-d82f76a61db7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SnowFlakeAccount.ProvisionedOn
+	toColumn: LocalDateTable_cd6ee209-e673-4607-af13-264ae97fd242.Date
+

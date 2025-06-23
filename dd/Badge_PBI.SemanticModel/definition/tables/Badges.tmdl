@@ -1,0 +1,138 @@
+table Badges
+	lineageTag: e5405a28-eec3-43b5-827d-d6efa5b098f3
+
+	measure FY1 = MAX(Badges[Fiscal Year])
+		formatString: 0
+		lineageTag: 7c37dba7-5bf4-4c0f-af06-5fd44d7f9c84
+
+	measure 'Zero Badge Count' = IF.EAGER(COUNT(Badges[Badge Name ]) = 0, 0, COUNT(Badges[Badge Name ]))
+		formatString: 0
+		lineageTag: f49c35a1-2c14-4c20-b41a-035c417cf647
+
+	column 'Sl No'
+		dataType: int64
+		formatString: 0
+		lineageTag: fb7b62a4-ec72-486c-b19f-e2643a0983d7
+		summarizeBy: sum
+		sourceColumn: Sl No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 0d9ba730-4006-4d8a-816d-b39f8ec9d8b5
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 8348f31c-ffb4-46b4-a60b-205c3e2e420a
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column GPN
+		dataType: string
+		lineageTag: efd8f53f-259c-4bcf-b6f4-24e54faeb77b
+		summarizeBy: none
+		sourceColumn: GPN
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 7f0ec24b-d33f-4991-9369-b80337b2fe7f
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Badge Name '
+		dataType: string
+		lineageTag: 34dee60e-37ff-46d5-a302-20909a69b3a6
+		summarizeBy: none
+		sourceColumn: "Badge Name "
+		sortByColumn: 'Badge Sort Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Badge Type'
+		dataType: string
+		lineageTag: 720eaa29-b9c2-47d7-bd7b-498787e766da
+		summarizeBy: none
+		sourceColumn: Badge Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Badge Category'
+		dataType: string
+		lineageTag: e64adfa3-43fd-4f43-88c9-3c6264b000b9
+		summarizeBy: none
+		sourceColumn: Badge Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Badge Subcategory'
+		dataType: string
+		lineageTag: 4bdce402-a8e6-4235-aa07-e78bf710eaeb
+		summarizeBy: none
+		sourceColumn: Badge Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 10483759-656d-4e50-9f85-ed2852b71827
+		summarizeBy: sum
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column FY = Badges[Fiscal Year]
+		formatString: 0
+		lineageTag: 42cad973-506d-4bda-9e46-e4c6766a66f2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column 'Badge Sort Order'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8fb1c60d-7a15-4787-bb42-e350cfb0b797
+		summarizeBy: sum
+		sourceColumn: Badge Sort Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: d9535cdd-f852-4a4b-a0ec-baddd413d2d6
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Badges = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://eyus.sharepoint.com/sites/CTPAnalyticsReportingandDataScienceARADS/Shared%20Documents/Engineering/Badge%20Report/Badge_Report.xlsx"), null, true),
+				    Badges_Sheet = Source{[Item="Badges",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Badges_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Sl No", Int64.Type}, {"Name", type text}, {"Email", type text}, {"GPN", type text}, {"Team", type text}, {"Badge Name ", type text}, {"Badge Type", type text}, {"Badge Category", type text}, {"Badge Subcategory", type text}, {"Fiscal Year", Int64.Type}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"Badge Name "}, #"Badge Sort Order", {"Badge Name "}, "Badge Sort Order", JoinKind.LeftOuter),
+				    #"Expanded Badge Sort Order" = Table.ExpandTableColumn(#"Merged Queries", "Badge Sort Order", {"Sort Order"}, {"Sort Order"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Badge Sort Order",{{"Sort Order", "Badge Sort Order"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

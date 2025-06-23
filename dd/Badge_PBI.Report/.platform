@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Badge_PBI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8935f9f-87c1-b019-418a-31973e85cdb0"
+  }
+}

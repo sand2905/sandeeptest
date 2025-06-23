@@ -1,0 +1,126 @@
+table SnowFlakeAccount
+	lineageTag: af6f720f-749a-41ef-a54d-ecf75fc94e8a
+
+	column DeploymentId
+		dataType: string
+		lineageTag: 054f620c-6e6e-43f6-aba9-3469a95abaaa
+		summarizeBy: none
+		sourceColumn: DeploymentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Environment
+		dataType: string
+		lineageTag: 622ac2ce-2569-4858-8b3c-8273ea0c47e2
+		summarizeBy: none
+		sourceColumn: Environment
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeCode
+		dataType: string
+		lineageTag: 1c8c55be-e9e2-433c-80fa-4fb756ef84fb
+		summarizeBy: none
+		sourceColumn: ChargeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner1
+		dataType: string
+		lineageTag: 05fca3b2-caa9-4031-b553-e83f143dfa7a
+		summarizeBy: none
+		sourceColumn: Owner1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner2
+		dataType: string
+		lineageTag: f646674f-fec4-4e84-9210-25b385cb19e0
+		summarizeBy: none
+		sourceColumn: Owner2
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProvisionedOn
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bb4b37bd-4dea-4e56-85c8-10e1896ab70b
+		summarizeBy: none
+		sourceColumn: ProvisionedOn
+
+		variation Variation
+			isDefault
+			relationship: 57ec6510-5e54-42e5-ab51-d82f76a61db7
+			defaultHierarchy: LocalDateTable_cd6ee209-e673-4607-af13-264ae97fd242.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SnowflakeAccountEmail
+		dataType: string
+		lineageTag: ff3fd4af-bec7-4aae-816d-f03655141ee1
+		summarizeBy: none
+		sourceColumn: SnowflakeAccountEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnowflakeAccountName
+		dataType: string
+		lineageTag: 1c614dde-b4fc-4184-b2ed-098e8cf2981f
+		summarizeBy: none
+		sourceColumn: SnowflakeAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnowflakeTshirtSize
+		dataType: string
+		lineageTag: e0ce9ee2-22de-406c-a135-02208e313dba
+		summarizeBy: none
+		sourceColumn: SnowflakeTshirtSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column Projectname
+		dataType: string
+		lineageTag: ebbfbbf7-e90f-4ef7-bcd6-2f3c225d5c28
+		summarizeBy: none
+		sourceColumn: Projectname
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnowflakeEdition
+		dataType: string
+		lineageTag: f4ea6af2-da31-473b-bd8c-a05565e398c0
+		summarizeBy: none
+		sourceColumn: SnowflakeEdition
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cloud
+		dataType: string
+		lineageTag: b6073f4d-2335-4db7-ba2f-bf7ee6730ff5
+		summarizeBy: none
+		sourceColumn: Cloud
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceLine
+		dataType: string
+		lineageTag: 15829185-205a-412e-a90c-b3d794e57c42
+		summarizeBy: none
+		sourceColumn: ServiceLine
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SnowFlakeAccount = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("usepewp4ursql01.database.windows.net", "storedeploymentdetails"),
+				    dbo_SnowFlakeAccount = Source{[Schema="dbo",Item="SnowFlakeAccount"]}[Data]
+				in
+				    dbo_SnowFlakeAccount
+
+	annotation PBI_ResultType = Table
+

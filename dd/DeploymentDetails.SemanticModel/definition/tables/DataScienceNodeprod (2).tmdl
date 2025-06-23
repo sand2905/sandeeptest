@@ -1,0 +1,337 @@
+table 'DataScienceNodeprod (2)'
+	lineageTag: 065ec579-7038-4019-8913-8ee74f2d1025
+
+	column Status
+		dataType: string
+		lineageTag: ace02dbc-6bcc-4cd5-9605-1f50af659489
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeploymentId
+		dataType: string
+		lineageTag: d9f68a30-f64d-4ac7-99c9-1839c7c21c1c
+		summarizeBy: none
+		sourceColumn: DeploymentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceLine
+		dataType: string
+		lineageTag: 283551c2-165e-4a1b-824b-ec263ea20ffb
+		summarizeBy: none
+		sourceColumn: ServiceLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: ddcd50dd-ec16-40cf-b276-bff37e2e0b6e
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Environment
+		dataType: string
+		lineageTag: 14b008d1-ba69-4f28-9ccc-649652b5c4b1
+		summarizeBy: none
+		sourceColumn: Environment
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeCode
+		dataType: string
+		lineageTag: fe522787-ecc4-46bf-8a13-39d12b6e7256
+		summarizeBy: none
+		sourceColumn: ChargeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner1
+		dataType: string
+		lineageTag: 9afddb91-104e-409f-8486-4972b65e1af1
+		summarizeBy: none
+		sourceColumn: Owner1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner2
+		dataType: string
+		lineageTag: 73f984aa-2fb2-438f-891d-8316fb508af8
+		summarizeBy: none
+		sourceColumn: Owner2
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResourceGroup
+		dataType: string
+		lineageTag: 4fce84ba-abd9-44da-9d36-ee8a4ef7636a
+		summarizeBy: none
+		sourceColumn: ResourceGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProvisionedOn
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5415ac54-a523-4311-9d6d-e91fd3987210
+		summarizeBy: none
+		sourceColumn: ProvisionedOn
+
+		variation Variation
+			isDefault
+			relationship: 17fedec4-7e6a-4ec4-ac5f-11f731f591ec
+			defaultHierarchy: LocalDateTable_0e9a4859-afca-4cd5-8d22-3de37b45d6b1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StorageAccount
+		dataType: string
+		lineageTag: 0f479268-180c-46a3-831e-868bbbd0e065
+		summarizeBy: none
+		sourceColumn: StorageAccount
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebApp
+		dataType: string
+		lineageTag: 6c47b61f-4542-4da0-ac47-b1bb83ef883b
+		summarizeBy: none
+		sourceColumn: WebApp
+
+		annotation SummarizationSetBy = Automatic
+
+	column WindowsDSVM
+		dataType: string
+		lineageTag: 541d21de-6490-4b4b-a7de-e2a06a2ad9ef
+		summarizeBy: none
+		sourceColumn: WindowsDSVM
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinuxDSVM
+		dataType: string
+		lineageTag: cc6c6fc3-ca59-4f26-a350-16769427c497
+		summarizeBy: none
+		sourceColumn: LinuxDSVM
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataFactory
+		dataType: string
+		lineageTag: 48baac38-1727-4471-97b4-153689751055
+		summarizeBy: none
+		sourceColumn: DataFactory
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataLakeStorage
+		dataType: string
+		lineageTag: ba08809f-8387-41e1-95cd-8d27a9d64b21
+		summarizeBy: none
+		sourceColumn: DataLakeStorage
+
+		annotation SummarizationSetBy = Automatic
+
+	column SqlDB
+		dataType: string
+		lineageTag: 884fcbf8-8b65-45ff-8b9a-6113089e5e1b
+		summarizeBy: none
+		sourceColumn: SqlDB
+
+		annotation SummarizationSetBy = Automatic
+
+	column Databricks
+		dataType: string
+		lineageTag: 42323974-4959-4e47-9d0a-cc5fbf6682d8
+		summarizeBy: none
+		sourceColumn: Databricks
+
+		annotation SummarizationSetBy = Automatic
+
+	column SynapseSqlPools
+		dataType: string
+		lineageTag: e5803136-f2d3-4d4c-9be1-77528d5bbc32
+		summarizeBy: none
+		sourceColumn: SynapseSqlPools
+
+		annotation SummarizationSetBy = Automatic
+
+	column SynapseBigDataPools
+		dataType: string
+		lineageTag: 3d277993-92e3-474d-acb8-16e18756dc47
+		summarizeBy: none
+		sourceColumn: SynapseBigDataPools
+
+		annotation SummarizationSetBy = Automatic
+
+	column SynapseWorkspace
+		dataType: string
+		lineageTag: 921e2c68-3005-4575-97de-65c202b1e7be
+		summarizeBy: none
+		sourceColumn: SynapseWorkspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column PowerBI
+		dataType: string
+		lineageTag: 0ef4c4bb-3a6f-467d-9d5d-afafc361ac21
+		summarizeBy: none
+		sourceColumn: PowerBI
+
+		annotation SummarizationSetBy = Automatic
+
+	column LogicApp
+		dataType: string
+		lineageTag: cbe6d851-88d0-47b6-94ba-0f963c47d631
+		summarizeBy: none
+		sourceColumn: LogicApp
+
+		annotation SummarizationSetBy = Automatic
+
+	column FunctionApp
+		dataType: string
+		lineageTag: 522a2cf0-ff11-4569-8ade-f47af43272a2
+		summarizeBy: none
+		sourceColumn: FunctionApp
+
+		annotation SummarizationSetBy = Automatic
+
+	column CognitiveServices
+		dataType: string
+		lineageTag: a89b0c6d-0fc9-4c1c-b942-9721c6c34af4
+		summarizeBy: none
+		sourceColumn: CognitiveServices
+
+		annotation SummarizationSetBy = Automatic
+
+	column Moveit
+		dataType: string
+		lineageTag: 2362d94f-fd72-4651-8dba-d841f008299d
+		summarizeBy: none
+		sourceColumn: Moveit
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceBus
+		dataType: string
+		lineageTag: 0006f158-73a2-49d1-a25c-63de8f7d8a55
+		summarizeBy: none
+		sourceColumn: ServiceBus
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventGrid
+		dataType: string
+		lineageTag: 8f6aaa12-4132-4c31-9c8b-40f2e81bfeb8
+		summarizeBy: none
+		sourceColumn: EventGrid
+
+		annotation SummarizationSetBy = Automatic
+
+	column CosmosDB
+		dataType: string
+		lineageTag: 4a37b828-219c-4306-96d3-340909700446
+		summarizeBy: none
+		sourceColumn: CosmosDB
+
+		annotation SummarizationSetBy = Automatic
+
+	column AnalysisService
+		dataType: string
+		lineageTag: f0a588d5-ca94-45fa-ac64-2f73c01d24cf
+		summarizeBy: none
+		sourceColumn: AnalysisService
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventHub
+		dataType: string
+		lineageTag: 43becf14-a5a4-4a58-91b8-bfc1d0ca0f61
+		summarizeBy: none
+		sourceColumn: EventHub
+
+		annotation SummarizationSetBy = Automatic
+
+	column StreamAnalytics
+		dataType: string
+		lineageTag: 24cd9b63-dc18-4fec-9fa2-c5739d49d5b6
+		summarizeBy: none
+		sourceColumn: StreamAnalytics
+
+		annotation SummarizationSetBy = Automatic
+
+	column CognitiveSearch
+		dataType: string
+		lineageTag: 76da74fd-bf4a-40d0-af6e-81b151f1f003
+		summarizeBy: none
+		sourceColumn: CognitiveSearch
+
+		annotation SummarizationSetBy = Automatic
+
+	column MlWorkSpace
+		dataType: string
+		lineageTag: a22c8fa5-855b-4cf9-8329-81d1ee580548
+		summarizeBy: none
+		sourceColumn: MlWorkSpace
+
+		annotation SummarizationSetBy = Automatic
+
+	column NodejsVM
+		dataType: string
+		lineageTag: 82020d86-131b-48da-b7b7-7afc363bbf9b
+		summarizeBy: none
+		sourceColumn: NodejsVM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Copilot
+		dataType: string
+		lineageTag: 1ac76e2d-62b7-43b4-97e9-bd11693ea9fc
+		summarizeBy: none
+		sourceColumn: Copilot
+
+		annotation SummarizationSetBy = Automatic
+
+	column TDFEnabled
+		dataType: string
+		lineageTag: fdcf76ca-4c1c-48fd-9992-5efe4b92b8f6
+		summarizeBy: none
+		sourceColumn: TDFEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContainerAppsEnv
+		dataType: string
+		lineageTag: 2abb0ae6-36a4-4486-a985-f9154376d466
+		summarizeBy: none
+		sourceColumn: ContainerAppsEnv
+
+		annotation SummarizationSetBy = Automatic
+
+	column DatabricksServerlessSQLWarehouse
+		dataType: string
+		lineageTag: d85a5f8f-ab7a-4959-a358-fc204e517855
+		summarizeBy: none
+		sourceColumn: DatabricksServerlessSQLWarehouse
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DataScienceNodeprod (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("usepewp4ursql01.database.windows.net,1433", "storedeploymentdetails"),
+				    dbo_DataScienceNodeprod = Source{[Schema="dbo",Item="DataScienceNodeprod"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_DataScienceNodeprod, each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

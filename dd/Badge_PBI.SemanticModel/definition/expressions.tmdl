@@ -1,0 +1,14 @@
+expression 'Badge Sort Order' =
+		let
+		    Source = Excel.Workbook(Web.Contents("https://eyus.sharepoint.com/sites/CTPAnalyticsReportingandDataScienceARADS/Shared%20Documents/Engineering/Badge%20Report/Badge_Report.xlsx"), null, true),
+		    #"Badge Sort Order_Sheet" = Source{[Item="Badge Sort Order",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Badge Sort Order_Sheet", [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Badge Name ", type text}, {"Sort Order", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: 09e84ad0-9155-42eb-83d3-a1150292c4b3
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

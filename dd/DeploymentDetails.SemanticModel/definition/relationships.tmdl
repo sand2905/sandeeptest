@@ -1,0 +1,16 @@
+relationship 843c6342-fdd7-44f1-885c-63eb7c599be6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DataScienceNodeprod.ProvisionedOn
+	toColumn: LocalDateTable_9b71d545-f298-4330-ade1-a81acd5f0a8b.Date
+
+relationship 17fedec4-7e6a-4ec4-ac5f-11f731f591ec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'DataScienceNodeprod (2)'.ProvisionedOn
+	toColumn: LocalDateTable_0e9a4859-afca-4cd5-8d22-3de37b45d6b1.Date
+
+relationship AutoDetected_9fd2a77d-9a66-4dda-b2fa-18d49895ae10
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: DataScienceNodeprod.DeploymentId
+	toColumn: 'DataScienceNodeprod (2)'.DeploymentId
+

@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU08\",\"version\":\"5.57\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU08",
+            "path": "BaseThemes/CY24SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"186L\"}}}}}]}}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8d611a960408729015a9",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"ef3e6cdcce1023b6d600\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.448891554591802,\"y\":0,\"z\":0,\"width\":1269.9310249371383,\"height\":720.0055364598953,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DataScienceNodeprod.AnalysisService\"},{\"queryRef\":\"DataScienceNodeprod.ChargeCode\"},{\"queryRef\":\"DataScienceNodeprod.DeploymentId\"},{\"queryRef\":\"DataScienceNodeprod.Environment\"},{\"queryRef\":\"DataScienceNodeprod.Owner1\"},{\"queryRef\":\"DataScienceNodeprod.Owner2\"},{\"queryRef\":\"DataScienceNodeprod.PowerBI\"},{\"queryRef\":\"DataScienceNodeprod.ProvisionedOn\"},{\"queryRef\":\"DataScienceNodeprod.ResourceGroup\"},{\"queryRef\":\"DataScienceNodeprod.Status\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DataScienceNodeprod\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AnalysisService\"},\"Name\":\"DataScienceNodeprod.AnalysisService\",\"NativeReferenceName\":\"AnalysisService\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ChargeCode\"},\"Name\":\"DataScienceNodeprod.ChargeCode\",\"NativeReferenceName\":\"ChargeCode\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"DeploymentId\"},\"Name\":\"DataScienceNodeprod.DeploymentId\",\"NativeReferenceName\":\"DeploymentId\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Environment\"},\"Name\":\"DataScienceNodeprod.Environment\",\"NativeReferenceName\":\"Environment\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Owner1\"},\"Name\":\"DataScienceNodeprod.Owner1\",\"NativeReferenceName\":\"Owner1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Owner2\"},\"Name\":\"DataScienceNodeprod.Owner2\",\"NativeReferenceName\":\"Owner2\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"PowerBI\"},\"Name\":\"DataScienceNodeprod.PowerBI\",\"NativeReferenceName\":\"PowerBI\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProvisionedOn\"},\"Name\":\"DataScienceNodeprod.ProvisionedOn\",\"NativeReferenceName\":\"ProvisionedOn\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ResourceGroup\"},\"Name\":\"DataScienceNodeprod.ResourceGroup\",\"NativeReferenceName\":\"ResourceGroup\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status\"},\"Name\":\"DataScienceNodeprod.Status\",\"NativeReferenceName\":\"Status\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AnalysisService\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}},\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 720.01,
+          "width": 1269.93,
+          "x": 9.45,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+table 'Bike Share Data'
+	lineageTag: a34d3b7a-fda6-433c-93f1-db5248cb6fab
+
+	measure 'No. of Rides' = COUNT('Bike Share Data'[Ride Id])
+		formatString: 0
+		lineageTag: ef859556-4bd0-4fd4-867b-a03f35c3b60b
+
+	column 'Ride Id'
+		dataType: string
+		lineageTag: 85df8fef-f37a-4601-9646-c19a7c9327c6
+		summarizeBy: none
+		sourceColumn: Ride Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bike Type'
+		dataType: string
+		lineageTag: 17c5682f-0aae-406f-ad03-9351e0bde129
+		summarizeBy: none
+		sourceColumn: Bike Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 72fb8271-0f41-434c-99eb-1f9ba048dc2e
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		variation Variation
+			isDefault
+			relationship: 4c268c69-6332-4b4f-905a-c9e3f077dcee
+			defaultHierarchy: LocalDateTable_f121d857-15a5-4a1f-8712-867e0451d1eb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Start Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 6c0eeb2d-f1e8-45f2-93c0-7d129c000259
+		summarizeBy: none
+		sourceColumn: Start Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: b09a43e8-c16f-4861-a616-f8505248f177
+		summarizeBy: none
+		sourceColumn: End Date
+
+		variation Variation
+			isDefault
+			relationship: 994c7bf9-5ca8-4d12-9c2e-47c431f087a0
+			defaultHierarchy: LocalDateTable_d233217f-f9af-41d5-bb07-3f2ccd5086cf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'End Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: c89c28a9-f46b-4f63-adcc-2630436332f0
+		summarizeBy: none
+		sourceColumn: End Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Start Station Name'
+		dataType: string
+		lineageTag: ecca6089-ade5-403f-bca0-09a69b848bfe
+		summarizeBy: none
+		sourceColumn: Start Station Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Station Name'
+		dataType: string
+		lineageTag: 9d512c4f-4b61-4773-9197-2ceb54545c89
+		summarizeBy: none
+		sourceColumn: End Station Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Member Type'
+		dataType: string
+		lineageTag: 22a63bb2-2f52-441d-aa37-71a0b83b5b25
+		summarizeBy: none
+		sourceColumn: Member Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number' = MONTH('Bike Share Data'[Start Date])
+		formatString: 0
+		lineageTag: d8bd36b6-c51c-48c1-b365-dd0b091b3f5e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = FORMAT('Bike Share Data'[Start Date], "mmm")
+		lineageTag: 7955e3a8-41e4-4554-986d-4bdc9e298b14
+		summarizeBy: none
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekday Number' = WEEKDAY('Bike Share Data'[Start Date])
+		formatString: 0
+		lineageTag: 87897678-185a-45d6-ae92-73e81f26c013
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday = FORMAT('Bike Share Data'[Start Date], "ddd")
+		lineageTag: 5b66a148-472f-46ea-be0f-d3a71ab5ab4f
+		summarizeBy: none
+		sortByColumn: 'Weekday Number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bike Share Data' = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("C:\Users\Sijo.Jose1\OneDrive - EY\Desktop\Co-pilot Demo\Bike Rental Data"),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"ride_id", type text}, {"rideable_type", type text}, {"started_at", type datetime}, {"ended_at", type datetime}, {"start_station_name", type text}, {"start_station_id", type text}, {"end_station_name", type text}, {"end_station_id", type text}, {"start_lat", type number}, {"start_lng", type number}, {"end_lat", type number}, {"end_lng", type number}, {"member_casual", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Source.Name", "start_station_id", "end_station_id", "start_lat", "start_lng", "end_lat", "end_lng"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"ride_id", "Ride Id"}, {"rideable_type", "Bike Type"}, {"started_at", "Start Date"}, {"ended_at", "End Date"}, {"start_station_name", "Start Station Name"}, {"end_station_name", "End Station Name"}, {"member_casual", "Member Type"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","_"," ",Replacer.ReplaceText,{"Bike Type"}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Replaced Value",{{"Bike Type", Text.Proper, type text}, {"Member Type", Text.Proper, type text}}),
+				    #"Inserted Time" = Table.AddColumn(#"Capitalized Each Word", "Time", each DateTime.Time([Start Date]), type time),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Inserted Time",{"Ride Id", "Bike Type", "Start Date", "Time", "End Date", "Start Station Name", "End Station Name", "Member Type"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Reordered Columns",{{"Time", "Start Time"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Start Date", type date}}),
+				    #"Inserted Time1" = Table.AddColumn(#"Changed Type1", "Time", each DateTime.Time([End Date]), type time),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Inserted Time1",{"Ride Id", "Bike Type", "Start Date", "Start Time", "End Date", "Time", "Start Station Name", "End Station Name", "Member Type"}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Reordered Columns1",{{"Time", "End Time"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns3",{{"End Date", type date}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

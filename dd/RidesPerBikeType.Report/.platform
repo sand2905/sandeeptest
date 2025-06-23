@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "RidesPerBikeType"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "037e5094-d3c8-a89a-44f3-1ce0f68af9df"
+  }
+}

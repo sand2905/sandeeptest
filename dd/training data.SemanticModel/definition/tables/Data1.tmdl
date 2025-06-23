@@ -1,0 +1,171 @@
+table Data1
+	lineageTag: c6bc42b7-0534-423f-808e-d73e6aa16972
+
+	column 'Order ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 21fb8f87-b531-450c-a02b-e38669a64673
+		summarizeBy: count
+		sourceColumn: Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9cd49c8d-5396-471c-be71-6cf883ce9694
+		summarizeBy: none
+		sourceColumn: Order Date
+
+		variation Variation
+			isDefault
+			relationship: f873d142-c332-44a1-bedd-1776d92fa177
+			defaultHierarchy: LocalDateTable_beb78d2f-cf64-4031-909e-1cbf5c6bd0ad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Unit Cost'
+		dataType: double
+		lineageTag: 9e4dcd1f-e83e-46d4-b72f-2a130725b180
+		summarizeBy: sum
+		sourceColumn: Unit Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Price
+		dataType: double
+		lineageTag: 6e5d2af0-6eef-41d3-b7c3-adcd08c77420
+		summarizeBy: sum
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Qty'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dde3014-02bd-440e-8c32-456f1d72b80b
+		summarizeBy: sum
+		sourceColumn: Order Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost of Sales'
+		dataType: double
+		lineageTag: eef49561-2da2-4919-9c74-98512a08e50e
+		summarizeBy: sum
+		sourceColumn: Cost of Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sales
+		dataType: double
+		lineageTag: 5219969a-6724-4ce1-9fb0-b3d8f9d8b87d
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		lineageTag: b4bdca1f-9c22-4ffb-bd25-d4c82aef5d9a
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Channel
+		dataType: string
+		lineageTag: 7e93ac52-42f7-44f8-9cf7-5f6df923b1b7
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promotion Name'
+		dataType: string
+		lineageTag: a5207a23-072e-489b-8295-adc925425a49
+		summarizeBy: none
+		sourceColumn: Promotion Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 4dc42f11-876b-4467-a3fb-c6af73e36047
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 23497d8c-448f-41b6-ab5d-39598c4acf50
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Sub Category'
+		dataType: string
+		lineageTag: e45b9e67-0c1d-49c9-b925-30e0ad21debe
+		summarizeBy: none
+		sourceColumn: Product Sub Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category'
+		dataType: string
+		lineageTag: 542ea359-140e-4567-89fd-62572d8eb821
+		summarizeBy: none
+		sourceColumn: Product Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 91ca4f1e-78f7-4ac8-bf18-afb04a64bc28
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 40f09564-e769-4975-970d-dcb718604946
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: c868872c-297c-44e2-89dc-8d6c102a32a2
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data1-1c68acf9-1408-414f-bba8-274529acf4a7 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Sandeep.Gangadharan\Downloads\TrainingData1.xlsx"), null, true),
+				    Data_Table = Source{[Item="Data",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data_Table,{{"Order ID", Int64.Type}, {"Order Date", type date}, {"Unit Cost", type number}, {"Price", type number}, {"Order Qty", Int64.Type}, {"Cost of Sales", type number}, {"Sales", type number}, {"Profit", type number}, {"Channel", type text}, {"Promotion Name", type text}, {"Product Name", type text}, {"Manufacturer", type text}, {"Product Sub Category", type text}, {"Product Category", type text}, {"Region", type text}, {"City", type text}, {"Country", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

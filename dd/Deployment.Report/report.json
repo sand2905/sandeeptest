@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU08\",\"version\":\"5.57\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU08",
+            "path": "BaseThemes/CY24SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"191L\"}}}}}]}}",
+      "displayName": "Workbench -Deployments",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "3781755b80aa38275392",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"e8db72912241ece467bc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.715370018975332,\"y\":0,\"z\":0,\"width\":1271.0942441492728,\"height\":720.5566097406705,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DataScienceNodeprod.ChargeCode\"},{\"queryRef\":\"DataScienceNodeprod.Environment\"},{\"queryRef\":\"DataScienceNodeprod.DeploymentId\"},{\"queryRef\":\"DataScienceNodeprod.LinuxDSVM\"},{\"queryRef\":\"DataScienceNodeprod.Owner1\"},{\"queryRef\":\"DataScienceNodeprod.Owner2\"},{\"queryRef\":\"DataScienceNodeprod.ProvisionedOn\"},{\"queryRef\":\"DataScienceNodeprod.ResourceGroup\"},{\"queryRef\":\"DataScienceNodeprod.Status\"},{\"queryRef\":\"DataScienceNodeprod.WindowsDSVM\"},{\"queryRef\":\"DataScienceNodeprod.ServiceLine\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DataScienceNodeprod\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ChargeCode\"},\"Name\":\"DataScienceNodeprod.ChargeCode\",\"NativeReferenceName\":\"ChargeCode\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Environment\"},\"Name\":\"DataScienceNodeprod.Environment\",\"NativeReferenceName\":\"Environment\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"DeploymentId\"},\"Name\":\"DataScienceNodeprod.DeploymentId\",\"NativeReferenceName\":\"DeploymentId\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"LinuxDSVM\"},\"Name\":\"DataScienceNodeprod.LinuxDSVM\",\"NativeReferenceName\":\"LinuxDSVM\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Owner1\"},\"Name\":\"DataScienceNodeprod.Owner1\",\"NativeReferenceName\":\"Owner1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Owner2\"},\"Name\":\"DataScienceNodeprod.Owner2\",\"NativeReferenceName\":\"Owner2\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProvisionedOn\"},\"Name\":\"DataScienceNodeprod.ProvisionedOn\",\"NativeReferenceName\":\"ProvisionedOn\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ResourceGroup\"},\"Name\":\"DataScienceNodeprod.ResourceGroup\",\"NativeReferenceName\":\"ResourceGroup\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status\"},\"Name\":\"DataScienceNodeprod.Status\",\"NativeReferenceName\":\"Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"WindowsDSVM\"},\"Name\":\"DataScienceNodeprod.WindowsDSVM\",\"NativeReferenceName\":\"WindowsDSVM\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ServiceLine\"},\"Name\":\"DataScienceNodeprod.ServiceLine\",\"NativeReferenceName\":\"ServiceLine\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ChargeCode\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"103.39149291272675D\"}}}},\"selector\":{\"metadata\":\"DataScienceNodeprod.ChargeCode\"}}]}}}",
+          "filters": "[]",
+          "height": 720.56,
+          "width": 1271.09,
+          "x": 9.72,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "5a8b4b1d3413ca4d3250",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"578e977bfdb86f4cfd2f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":25.90765338393422,\"y\":119.82289690069577,\"z\":0,\"width\":1254.9019607843138,\"height\":600.7337128399747,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DataScienceNodeprod (2).Environment\"},{\"queryRef\":\"DataScienceNodeprod (2).DeploymentId\"},{\"queryRef\":\"DataScienceNodeprod (2).Status\"},{\"queryRef\":\"DataScienceNodeprod (2).ServiceLine\"},{\"queryRef\":\"DataScienceNodeprod (2).ResourceGroup\"},{\"queryRef\":\"DataScienceNodeprod (2).Owner1\"},{\"queryRef\":\"DataScienceNodeprod (2).Owner2\"},{\"queryRef\":\"DataScienceNodeprod (2).ProvisionedOn.Variation.Date Hierarchy.Year\"},{\"queryRef\":\"DataScienceNodeprod (2).ProvisionedOn.Variation.Date Hierarchy.Month\"},{\"queryRef\":\"DataScienceNodeprod (2).ChargeCode\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DataScienceNodeprod (2)\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Environment\"},\"Name\":\"DataScienceNodeprod (2).Environment\",\"NativeReferenceName\":\"Environment\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Status\"},\"Name\":\"DataScienceNodeprod (2).Status\",\"NativeReferenceName\":\"Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ServiceLine\"},\"Name\":\"DataScienceNodeprod (2).ServiceLine\",\"NativeReferenceName\":\"ServiceLine\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ResourceGroup\"},\"Name\":\"DataScienceNodeprod (2).ResourceGroup\",\"NativeReferenceName\":\"ResourceGroup\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Owner1\"},\"Name\":\"DataScienceNodeprod (2).Owner1\",\"NativeReferenceName\":\"Owner1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Owner2\"},\"Name\":\"DataScienceNodeprod (2).Owner2\",\"NativeReferenceName\":\"Owner2\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"ProvisionedOn\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"DataScienceNodeprod (2).ProvisionedOn.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"ProvisionedOn Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"ProvisionedOn\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"DataScienceNodeprod (2).ProvisionedOn.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"ProvisionedOn Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ChargeCode\"},\"Name\":\"DataScienceNodeprod (2).ChargeCode\",\"NativeReferenceName\":\"ChargeCode\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"DeploymentId\"},\"Name\":\"DataScienceNodeprod (2).DeploymentId\",\"NativeReferenceName\":\"DeploymentId\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.6}}}}}}}],\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"grid\":[{\"properties\":{\"gridHorizontalWeight\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"gridHorizontalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.1}}}}},\"gridVertical\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridVerticalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.1}}}}}}}]}}}",
+          "filters": "[{\"name\":\"635012947a18fabdd817\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DataScienceNodeprod\"}},\"Name\":\"Variation\",\"Property\":\"ProvisionedOn\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false},{\"name\":\"31fad15ded715f51d675\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DataScienceNodeprod\"}},\"Property\":\"DeploymentId\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 600.73,
+          "width": 1254.90,
+          "x": 25.91,
+          "y": 119.82,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d6484092a78b92c51591\",\"layouts\":[{\"id\":0,\"position\":{\"x\":25.90765338393422,\"y\":19.430740037950663,\"z\":1000,\"width\":1237.090449082859,\"height\":100.3921568627451,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Workbench - Deployment Report\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"18pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F0D499'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.39,
+          "width": 1237.09,
+          "x": 25.91,
+          "y": 19.43,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

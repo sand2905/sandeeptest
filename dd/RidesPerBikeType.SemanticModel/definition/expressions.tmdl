@@ -1,0 +1,43 @@
+expression 'Sample File' =
+		let
+		    Source = Folder.Files("C:\Users\Sijo.Jose1\OneDrive - EY\Desktop\Co-pilot Demo\Bike Rental Data"),
+		    Navigation1 = Source{0}[Content]
+		in
+		    Navigation1
+	lineageTag: 30f1f81a-3516-422b-bc57-b1e2aeec8f08
+	queryGroup: 'Transform File from Bike Rental Data\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 7dc844a7-c55e-436e-8846-a8f3afbf7823
+	queryGroup: 'Transform File from Bike Rental Data\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File' =
+		let
+		    Source = Csv.Document(Parameter1,[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+	lineageTag: 5d38fff5-f346-44b2-b673-bfadce3f5b54
+	queryGroup: 'Transform File from Bike Rental Data'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1) => let
+		        Source = Csv.Document(Parameter1,[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		        #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+		    in
+		        #"Promoted Headers"
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: 8944e138-b6a9-4a02-9e2b-eea5839aeeb8
+	queryGroup: 'Transform File from Bike Rental Data\Helper Queries'
+
+	annotation PBI_ResultType = Function
+

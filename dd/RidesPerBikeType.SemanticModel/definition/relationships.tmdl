@@ -1,0 +1,10 @@
+relationship 4c268c69-6332-4b4f-905a-c9e3f077dcee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bike Share Data'.'Start Date'
+	toColumn: LocalDateTable_f121d857-15a5-4a1f-8712-867e0451d1eb.Date
+
+relationship 994c7bf9-5ca8-4d12-9c2e-47c431f087a0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bike Share Data'.'End Date'
+	toColumn: LocalDateTable_d233217f-f9af-41d5-bb07-3f2ccd5086cf.Date
+
